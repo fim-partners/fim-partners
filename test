@@ -1,0 +1,252 @@
+<html>
+  <head>
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+    <title>FIM Partners - Firm DDQ</title>
+      
+    <style>
+
+      img {
+	  max-width: 100%;
+      }
+
+      @font-face {
+	  font-family: Roboto Condensed Light;
+	  src: prince-lookup("MyFont"),
+           url("Fonts/RobotoCondensed-Light.ttf") format("truetype");
+	  }
+
+      @font-face {
+	  font-family: Roboto Slab Bold;
+	  src: prince-lookup("MyFont"),
+           url("Fonts/RobotoSlab-Bold.ttf") format("truetype");
+	  }
+
+      @font-face {
+	  font-family: Roboto Condensed Bold;
+	  src: prince-lookup("MyFont"),
+           url("Fonts/RobotoCondensed-Bold.ttf") format("truetype");
+	  }
+
+      html {
+	  font-family: 'Roboto Condensed Light', prince-no-fallback;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+	  font-family: 'Roboto Condensed Bold', prince-no-fallback;
+      }
+
+      header { font-family: 'Roboto Slab Bold', prince-no-fallback; }
+
+      p {
+	  text-align: justify;
+	  text-justify: inter-word;
+      }
+
+      @page {
+        size: A4
+      }
+
+      @page {
+	  @top { content: element(header) }
+	  @bottom-right { content: counter(page) }
+       }
+
+      @page:first {
+          @bottom-right { content: normal }
+	  background: #347dbd;
+	  @top { content: normal; background: white; }
+       }
+
+      header { position: running(header); text-align: right; }
+
+      .page-break {
+	  border: none;
+	  margin: 0;
+	  page-break-before: always;   
+      }
+
+      .cover-page {
+	  color: white;
+      }
+
+/* toc */
+
+/* the table of contents (toc) is formatted as a table so that page
+   numbers appears in a column of their own on the right side. 
+*/
+
+#toc-container { display: table; width: 100% }
+
+.toc a {
+  counter-increment: chapter-toc;
+  display: table-row; 
+  text-align: left;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.toc a span {
+  padding-top: 1em;
+  display: table-cell;
+  page-break-inside: avoid;
+}
+
+.toc a span:after {
+  content: leader(".");
+}
+
+.toc a:after {
+  content: target-counter(attr(href), page);
+  display: table-cell;
+  text-align: right;
+  vertical-align: bottom;
+}
+
+.Header {
+    color: blue;
+}
+
+</style>
+
+<script>
+function getText(e)
+{
+    var text = "";
+
+    for (var x = e.firstChild; x != null; x = x.nextSibling)
+    {
+	if (x.nodeType == x.TEXT_NODE)
+	{
+	    text += x.data;
+	}
+	else if (x.nodeType == x.ELEMENT_NODE)
+	{
+	    text += getText(x);
+	}
+    }
+
+    return text;
+}
+
+
+
+function maketoc()
+{
+    var hs = document.getElementsByTagName("h2");
+    var toc = document.getElementById('toc-container');
+    for(var i=0; i<hs.length; i++)
+    {
+	var text = document.createTextNode(getText(hs[i]));
+	var span = document.createElement("span");
+        span.appendChild(text);
+
+	if (hs[i].className === "Header") {
+	    span.className = "Header";
+	}
+
+        hs[i].setAttribute("id", "ch"+i);
+	var link = document.createElement("a");
+	link.setAttribute("href", "#ch"+i);
+	link.appendChild(span);
+	toc.appendChild(link); 
+    }
+}
+</script>
+
+    
+  </head>
+
+  <body onload="maketoc();">
+
+   <header><span style="color:#347dbd">FIM</span> <span style="color:#445a75">Partners</span></header>
+   <footer id="page-footer">Strictly Confidential</footer>
+   <main>
+
+<div class="cover-page">
+<br><br><br><br><br><br><br><br>
+<h1>FIM Partners</h1>
+<h1>Firm DDQ</h1> 
+<br><br><br><br>
+
+<h3>Contact Information</h3>
+FIM Partners Investor Relations<br>
+Office 903, Al Fattan Currency House<br>
+E-mail: investorrelations@fimpartners.com<br>
+Phone: +971 2 439 9700<br>
+Fax: +971 2 439 9700<br>
+</div>
+<hr class="page-break" />
+
+<section class=toc>
+<h1>CONTENTS</h1>
+<div id=toc-container></div>
+</section>     
+
+     <article id="Overview">
+       <h2>Overview</h2>
+       <h2 class="Header">Hello</h2>
+       <h2>World</h2>
+       <section id="History & Introduction">
+	 <h3>History & Introduction</h3>
+	 <p>FIM Partners was established in 2008 as among the first dedicated and independent specialist investment managers focused on the Emerging Frontier markets. The firm has successfully navigated the risks of investing in Emerging Frontier markets over the last twelve years through its fundamental approach, on the ground presence and smart portfolio construction. The firmÂs flagship equities fund has generated a 170% return since inception and 110% of outperformance against the benchmark.</p>
+
+	 <p>In addition to employing investment staff with over 200 years combined experience in Emerging & Frontier markets, the firm employs inhouse, independent risk management and operations professionals and its focus on capital preservation has led to its funds having a top ranking in league tables. The firm has cultivated long-term partnerships with institutional investors since inception, and AUM has grown significantly from $140 million in 2010 to $US1.8 billion today. As an independent firm, FIM Partners has been able to establish conservative AUM limits to size its strategies to the opportunity set for alpha generation and has never breached its capacity limits.</p>
+
+       </section>
+       <section id="Current Ownership">
+	 <h3>Current Ownership</h3>
+         <p>The firm is owned 50/50 by its founder and CIO, Hedi Ben Mlouka and EFG-Hermes. With the firmâs phantom share programme, 60% of the economic rights of the firm are held by senior employees. EFG-Hermes is a leading Egyptian financial services firm with extensive capabilities and on the ground presence in Emerging & Frontier markets built over a thirty-year history.</p>
+      
+	 <figure>
+	   <img src="ownership-structure.png" alt="Ownership Structure of FIM Partners">
+	   <figcaption>Fig.1 - Ownership Structure of FIM Partners</figcaption>
+	 </figure>
+
+       </section>
+
+       <section id="Investor Base">
+	 <h3>Investor Base</h3>
+         <p>The firmâs assets under management are invested on behalf of university endowments, sovereign wealth funds, insurance companies, outsourced CIOâs, and pension plans from North America, Europe, the Middle East and Asia. The firm has established institutional relationships with some of the USâs most prestigious university endowments, the largest sovereign wealth funds globally and top tier, international financial institutions. The firm offers an asset management process conducted with the institutional rigor required by our investors; superior performance, comprehensive research, risk management and operational integrity.</p>
+
+	 <figure>
+	   <img src="figure-2.png" alt="Investor Base of FIM Partners at 30 June 2020">
+	   <figcaption>Fig.2 - Investor Base of FIM Partners at 30 June 2020</figcaption>
+	 </figure>
+
+       <section id="AUM History">
+         <h3>AUM History</h3>
+         <p>FIM Partners has cultivated long-term partnerships with institutional investors since inception, and AUM has grown significantly from $140m in 2010 to $US1.8 billion today.</p>
+	 
+	 <figure>
+	   <img src="figure-3.png" alt="Evolution of Firm AUM since inception ($m)">
+	   <figcaption>Fig.3 - Evolution of Firm AUM since inception ($m)</figcaption>
+	 </figure>
+
+       </section>
+       <section id="Products & AUM by Product">
+         <h3>Products & AUM by Product</h3>
+         <p>FIM Partners has grown organically over 12 years to cover equity, fixed income and real estate asset classes in emerging and frontier markets. Our strategies have clear AUM capacity limits to ensure asset performance takes priority over the level of assets under management.</p>
+         
+         <h4>Public Equities</h4>
+         <p>FIM Partners is a leading Emerging Frontier manager with a superior track record over the last 10 years and $1.4bn of AUM. FIM EM Frontier is the firmâs flagship frontier markets fund and has invested across non-core EM and frontier markets since 2013. FIM Mena Horizon is the firmâs flagship MENA equities fund and is a recognised leader in the region for over 10 years.</p>
+
+	 <h4>Fixed Income</h4>
+         <p>FIM Partners expanded to emerging market fixed income in 2018-2019 with the senior level hires of Francesc Balcells, previously Executive Vice President at PIMCO where he managed over $17.0bn in EM Debt, and Usman Ahmed, previously Head of Investments at Emirates NBD, where he managed over $2.0bn in Mena Credit and one of the longest track records in the region. The firmâs three fixed income funds have had strong performance since inception in 2018-2019.</p>
+
+	 <figure>
+	   <img src="figure-4.png" alt="Product Matrix for FIM Partners & AUM by Product">
+	   <figcaption>Fig.4 - Product Matrix for FIM Partners & AUM by Product</figcaption>
+	 </figure>
+
+	 <img src="my-svg.svg" height="300" width="300" />
+	      
+
+     </article>
+
+     
+      
+    </main>
+    
+  </body>
+  
+</html>
